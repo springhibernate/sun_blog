@@ -1,0 +1,36 @@
+<% if notice %>
+<div class="alert alert-success"><%= notice %></div>
+<% end %>
+
+<div class="panel panel-default ">
+  <div class="panel-heading clearfix">
+    <div>
+      <%= link_to t('new'), new_cat_path,:class=>"btn btn-success" %>
+    </div>
+  </div>
+  <table id="list" class="table table-bordered table-striped table-hover table-responsive">
+    <thead>
+    <tr>
+      <td><%=t('operation')%></td>
+      <td><%=Cat.human_attribute_name(:cat_name)%></td>
+      <td><%=Cat.human_attribute_name(:cat_name_en)%></td>
+    </tr>
+    </thead>
+    <% @cats.each do |cat| %>
+        <tr>
+          <td>
+            <%= link_to t('edit'), edit_cat_path(cat),:class=>"btn btn-xs btn-success" %>
+            <%= link_to t('destroy'), cat, :confirm => t('are_you_sure'), :method => :delete,:class=>"btn btn-xs btn-danger" %>
+          </td>
+          <td><%= cat.cat_name %></td>
+          <td><%= cat.cat_name_en %></td>
+        </tr>
+    <% end %>
+
+  </table>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <%=will_paginate @cats%>
+    </li>
+  </ul>
+</div>

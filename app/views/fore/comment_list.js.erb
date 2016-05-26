@@ -1,0 +1,4 @@
+<%
+cmt_list_html=render(:partial => "comments",:object=>@comments)
+%>
+$(".cmt-list").html('<%=cmt_list_html%>');

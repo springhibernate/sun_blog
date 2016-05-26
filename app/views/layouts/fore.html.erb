@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%=t('sun_blog')%></title>
+  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag('bootstrap/css/bootstrap.min')%>
+  <%= javascript_include_tag 'jquery.min' %>
+  <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag 'common' %>
+  <%= javascript_include_tag 'fore' %>
+  <%= javascript_include_tag('/stylesheets/bootstrap/js/bootstrap.min.js')%>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+<div>
+  <div class="blog-masthead">
+    <div class="container">
+      <span class="h1"><%= link_to t('sun_blog'),index_path%></span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 blog-main">
+        <%=yield%>
+      </div>
+
+      <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+        <div class="sidebar-module sidebar-module-inset">
+          <h4><%=t(".categories")%></h4>
+          <ol class="sidebar-category">
+            <%  Cat.list_cats.each do |c|%>
+            <li>
+              <p><%= link_to c.cat_name,'/cat/#{c.id}'%>
+                <span class="badge"><%=c.blog_count %></span></p>
+            </li>
+            <%end %>
+          </ol>
+        </div>
+
+      </div><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+  </div>
+  <div class="blog-footer">
+    <p>Copyright ©  <%= t('author')%>  version reserved.</p>
+    <p>
+      <a href="#"><%= t('.top')%></a>
+    </p>
+  </div>
+</div>
+</body>
+</html>

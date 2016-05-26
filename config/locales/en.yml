@@ -1,0 +1,49 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  author: "Sunshine"
+  sun_blog: "SunshineBlog"
+  back: "Back"
+  save: "Save"
+  new: "New"
+  edit: "Edit"
+  destroy: "Destroy"
+  are_you_sure: "Are you sure to destroy?"
+  create_successfully: "Create successfully!"
+  update_successfully: "Update successfully!"
+  operation: "Operation"
+  valid: "Valid"
+  invalid: "Invalid"
+  wrong_user_name_or_password: "you input a wrong user name or password"
+  account_is_stop: "your account is stop,please find your administrator"
+
+  will_paginate:
+    previous_label: "Previous"
+    next_label: "Next"
+
+  fore:
+    blog_detail:
+      submit_comment: "Submit comment"
+
+  auth:
+    new:
+      login: "Login"
+
+  time:
+    formats:
+      default: "%b %d %Y %H:%M:%S"
+      short: "%H:%M:%S"
+
+  activerecord:
+    attributes:
+      blog:
+        title_en: "Url section"
+        content_md: "Content"
+        intro: "Introduction"
+      cat:
+        cat_name_en: "Url section"
+      user_info:
+        password_ori: "Passord"
+        password_ori_confirm: "Password Confirm"
+        last_logtime: "Last login"

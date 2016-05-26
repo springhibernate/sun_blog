@@ -1,0 +1,39 @@
+<div class="blog-post">
+  <h2 class="blog-post-title">
+    <%=@blog.title %>
+  </h2>
+  <p class="blog-post-meta"><%=t("author")%>&nbsp;&nbsp;&nbsp;&nbsp;<%=t(".post_at")%>&nbsp;<%=l(@blog.created_at)%>&nbsp;&nbsp;&nbsp;&nbsp;<%=t(".read_count")%>&nbsp;<%= @blog.read_count %></p>
+  <div id="blog-post-content">
+    <%= sanitize(@blog.content) %>
+  </div>
+</div><!-- /.blog-post -->
+
+<div class="cmt">
+  <div class="cmt-add">
+    <% form_tag({:controller => :fore,:action => :comment_create},:remote=>true,:class=>"form-signin form-horizontal") do %>
+    <div id="comment_errors" style="display: none;"></div>
+    <div id="comment_errors" style="display: none;"></div>
+    <div class="form-group clearfix">
+      <%= label_tag :email,Comment.human_attribute_name(:email),:class=>"col-sm-2 control-label"%>
+      <div class="col-sm-10"><%= text_field_tag :email,params[:email],:class=>"form-control" %></div>
+    </div>
+    <div class="form-group clearfix">
+      <%= label_tag :content,Comment.human_attribute_name(:content),:class=>"col-sm-2 control-label"  %>
+      <div class="col-sm-10"><%= text_area_tag :content,params[:content],:rows=>5,:cols=>40,:class=>"form-control" %></div>
+    </div>
+    <div class="form-group text-center">
+      <%= hidden_field_tag :blog_id,@blog.id%>
+      <%= submit_tag t('.submit_comment'),:class=>"btn btn-success"%>
+    </div>
+    <%end%>
+  </div>
+  <div class="cmt-list">
+  </div>
+  <%= link_to "Comment list",{:controller => :fore,:action => :comment_list,:blog_id=>@blog.id},:remote=>true,:style=>"display:none;",:id=>"btn_comment_list" %>
+</div>
+<script type="text/javascript">
+  $(function(){
+    //listComment(<%=@blog.id %>);
+    $("#btn_comment_list").click();
+  });
+</script>

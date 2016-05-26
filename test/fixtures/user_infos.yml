@@ -1,0 +1,20 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<% salt_str="sunshine" %>
+one:
+  user_name: admin
+  password: <%=UserInfo.encrypt("123456",salt_str)%>
+  status: 1
+  last_logtime: 2016-05-19 07:07:58
+  salt: <%=salt_str%>
+two:
+  user_name: sun
+  password: <%=UserInfo.encrypt("123456",salt_str)%>
+  status: 1
+  last_logtime: 2016-05-19 07:07:58
+  salt: <%=salt_str%>
+three:
+  user_name: harry
+  password: <%=UserInfo.encrypt("123456",salt_str)%>
+  status: 0
+  last_logtime: 2016-05-19 07:07:58
+  salt: <%=salt_str%>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%=t("sun_blog")%></title>
+  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag('bootstrap/css/bootstrap.min')%>
+  <%= javascript_include_tag 'jquery.min' %>
+  <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag 'common' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag('/stylesheets/bootstrap/js/bootstrap.min.js')%>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<div>
+  <div class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to t('sun_blog'),index_path,:class=>"navbar-brand back-title",:target => "new"%>
+      </div>
+
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="<%=get_menu_item_class  "blogs#new",@controller,action_name %>"><%= link_to t('.blog_add'),new_blog_path%></li>
+          <li class="<%=get_menu_item_class "blogs#index",@controller,action_name  %>"><%= link_to t('.blog_list'),blogs_path%></li>
+          <li class="<%=get_menu_item_class "cats#index",@controller,action_name   %>"><%= link_to t('.cat_list'),cats_path%></li>
+          <li class="<%=get_menu_item_class "comments#index",@controller,action_name %>"><%= link_to t('.comment_list'),comments_path%></li>
+          <!--<li class="<%=get_menu_item_class "stat_list",@controller,action_name   %>"><%= link_to 'Stat list','stats'%></li>-->
+          <li class="">
+            <%= link_to t('.logout'),logout_path,:method => :delete %>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <%= yield %>
+</div>
+
+
+</body>
+</html>

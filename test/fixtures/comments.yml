@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  blog: one
+  email: rubist
+  content: i like ruby too
+
+two:
+  blog: one
+  email: red_ruby@qq.com
+  content: ruby make you happy

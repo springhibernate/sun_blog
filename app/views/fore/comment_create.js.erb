@@ -1,0 +1,8 @@
+<% if @comment.errors.any? %>
+$("#comment_errors").html('<%=error_for_boostrap_style(@comment) %>');
+$("#comment_errors").show(300);
+<% else %>
+$("#comment_errors").hide();
+$("#content").val('');
+$(".cmt-list").prepend('<%= render(:partial=>"comment",:object=>@comment) %>');
+<% end %>

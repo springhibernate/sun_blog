@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cat: one
+  title: ruby is interesting
+  title_en: ruby-is-interesting
+  intro: ruby is very interesting......
+  content_md: ruby is very interesting,i like it very much
+  content: ruby is very interesting,i like it very much
+  read_count: 0
+  user_id: 1
+  seo_title: ruby is interesting
+  seo_keyword: ruby is interesting
+  seo_desc: ruby is interesting
+
+two:
+  cat: two
+  title: java use widespread on industry
+  title_en: java-use-widespread-on-industry
+  intro: java use widespread on industry......
+  content_md: java use widespread on industry,you will find a good if learn it well
+  content: java use widespread on industry,you will find a good if learn it well
+  read_count: 0
+  user_id: 1
+  seo_title: java use widespread on industry
+  seo_keyword: java use widespread on industry
+  seo_desc: java use widespread on industry

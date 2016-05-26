@@ -1,0 +1,53 @@
+<%= form_for(@blog,:html=>{:class=>'form-horizontal'}) do |f| %>
+  <% if @blog.errors.any? %>
+    <div  class="panel panel-danger">
+      <div class="panel-heading"><%=t('activerecord.errors.template.body')%></div>
+
+      <ul class="list-group">
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li class="list-group-item"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group clearfix">
+    <%= f.label :title,:class=>"col-sm-2 control-label"  %>
+    <div class="col-sm-10"><%= f.text_field :title,:class=>"form-control" %></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :cat_id,:class=>"col-sm-2 control-label"  %>
+    <div class="col-sm-10"><%= f.select :cat_id,Cat.list_options,{},{:class=>"form-control"} %></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content_md,:class=>"col-sm-2 control-label"  %>
+    <div class="col-sm-10"><%= f.text_area :content_md,:rows=>16,:cols=>40,:class=>"form-control" %></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :intro,:class=>"col-sm-2 control-label" %>
+    <div class="col-sm-10"><%= f.text_area :intro,:rows=>2,:cols=>40,:class=>"form-control" %></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :seo_title,:class=>"col-sm-2 control-label"  %>
+    <div class="col-sm-10"><%= f.text_field :seo_title,:class=>"form-control" %></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :seo_keyword,:class=>"col-sm-2 control-label"  %>
+    <div class="col-sm-10"><%= f.text_field :seo_keyword,:class=>"form-control" %></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :seo_desc,:class=>"col-sm-2 control-label"  %>
+    <div class="col-sm-10"><%= f.text_area :seo_desc,:rows=>2,:cols=>40,:class=>"form-control" %></div>
+  </div>
+
+  <div class="form-group text-center">
+    <%= f.submit t("save"),:class=>"btn btn-success" %>
+    <%= link_to t("back"), blogs_path,:class=>"btn btn-default" %>
+  </div>
+<% end %>

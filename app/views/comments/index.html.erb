@@ -1,0 +1,39 @@
+<% if notice %>
+<div class="alert alert-success"><%= notice %></div>
+<% end %>
+
+<div class="panel panel-default ">
+  <div class="panel-heading clearfix">
+    <div>
+
+    </div>
+  </div>
+  <table id="list" class="table table-bordered table-striped table-hover table-responsive">
+    <thead>
+    <tr>
+      <td><%=t('operation')%></td>
+      <td><%=Comment.human_attribute_name(:content)%></td>
+      <td><%=Comment.human_attribute_name(:email)%></td>
+      <td><%=Comment.human_attribute_name(:blog_id)%></td>
+      <td><%=Comment.human_attribute_name(:created_at)%></td>
+    </tr>
+    </thead>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td>
+    	<%= link_to t('destroy'), comment, :confirm => t('are_you_sure'), :method => :delete,:class=>"btn btn-xs btn-danger" %>
+    </td>
+    <td><%= comment.content %></td>
+    <td><%= comment.email %></td>
+    <td><%= comment.blog.title %></td>
+    <td><%= l(comment.created_at) %></td>
+  </tr>
+<% end %>
+</table>
+<ul class="list-group">
+    <li class="list-group-item">
+      <%=will_paginate @comments%>
+    </li>
+  </ul>
+</div>

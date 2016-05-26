@@ -1,0 +1,25 @@
+<%= form_for(@cat,:html=>{:class=>'form-horizontal'}) do |f| %>
+  <% if @cat.errors.any? %>
+    <div class="panel panel-danger">
+      <div class="panel-heading"><%=t('activerecord.errors.template.body')%></div>
+
+      <ul class="list-group">
+      <% @cat.errors.full_messages.each do |msg| %>
+        <li class="list-group-item"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group clearfix">
+    <%= f.label :cat_name,:class=>"col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :cat_name,:class=>"form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group text-center">
+    <%= f.submit t("save"),:class=>"btn btn-success" %>
+    <%= link_to t("back"), cats_path,:class=>"btn btn-default" %>
+  </div>
+<% end %>

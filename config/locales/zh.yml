@@ -1,0 +1,110 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+zh:
+  author: "阳光"
+  sun_blog: "阳光博客"
+  back: "返回"
+  save: "保存"
+  new: "新建"
+  edit: "编辑"
+  destroy: "删除"
+  are_you_sure: "你确定要删除吗？"
+  create_successfully: "添加成功！"
+  update_successfully: "更新成功！"
+  operation: "操作"
+  valid: "有效"
+  invalid: "无效"
+  wrong_user_name_or_password: "用户名或密码错误"
+  account_is_stop: "用户已经停用，如有问题请找管理员"
+
+  will_paginate:
+    previous_label: "上一页"
+    next_label: "下一页"
+
+  layouts:
+    application:
+      blog_add: "博客新增"
+      blog_list: "博客列表"
+      cat_list: "分类列表"
+      comment_list: "评论列表"
+      logout: "退出"
+    fore:
+      top:  "顶部"
+      categories:  "分类"
+  auth:
+    new:
+      user_name: "用户名"
+      password: "密码"
+      login: "登陆"
+  blogs:
+  fore:
+    blog_detail:
+      post_at: "发布于"
+      read_count: "阅读数"
+      submit_comment: "提交评论"
+    blog_list:
+      post_at: "发布于"
+      read_count: "阅读数"
+  number:
+    currency:
+      format:
+        unit:  "$US"
+        precision:  2
+        separator:  ","
+        delimiter:  "."
+        format:  "%n&nbsp;%u"
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M:%S"
+      short: "%H:%M:%S"
+  activerecord:
+    models:
+      blog: "博客"
+      cat: "分类"
+      comment: "评论"
+      user_info: "用户"
+    attributes:
+      blog:
+        title: "标题"
+        title_en: "拼音"
+        content_md: "内容"
+        content: "内容"
+        intro: "简介"
+        user_id: "作者"
+        cat_id: "分类"
+        seo_title: "seo标题"
+        seo_keyword: "seo关键字"
+        seo_desc: "seo描述"
+        created_at: "发布时间"
+        read_count: "阅读量"
+        comment_count: "评论数"
+      cat:
+        cat_name: "标题"
+        cat_name_en: "拼音"
+      comment:
+        email: "邮箱"
+        content: "内容"
+        blog_id: "所在博客"
+        created_at: "评论时间"
+      user_info:
+        user_name: "用户名"
+        password: "密码"
+        password_ori: "密码"
+        password_ori_confirm: "确认密码"
+        status: "状态"
+        last_logtime: "最后登录"
+    errors:
+      messages:
+        inclusion:  "不包含在内"
+        blank:  "不能为空"
+        confirmation: "两次数输入的不一致"
+        taken: "已经存在"
+      template:
+        body:  "有错误导致保存失败"
+        header:
+          one:  "1个错误导致保存失败"
+          other:  "%{count}个错误导致保存失败"
+
+
+
