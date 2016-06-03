@@ -33,16 +33,15 @@ backgroup:
 
 # some snapshot  
 ## access on pc  
-![](snapshot/fore_blog_list.png)  
-![](snapshot/fore_blog_detail.png)  
-![](snapshot/fore_blog_comment.png)  
+![](snapshot/en/fore_blog_list.png)  
+![](snapshot/en/fore_blog_detail.png)  
 ## access on mobile  
-![](snapshot/mobile_blog_list.png)  
-![](snapshot/mobile_blog_detail.png)  
+![](snapshot/en/mobile_blog_list.png)  
+![](snapshot/en/mobile_blog_detail.png)  
 ## backgroup  
-![](snapshot/back_blog_list.png)  
-![](snapshot/back_cat_list.png)  
-![](snapshot/back_comment_list.png)  
+![](snapshot/en/back_blog_list.png)  
+![](snapshot/en/back_cat_list.png)  
+![](snapshot/en/back_comment_list.png)  
 
 # todo  
 @jquery problem:the rails.js does not correspond to jquery  
